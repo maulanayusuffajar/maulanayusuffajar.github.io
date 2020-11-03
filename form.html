@@ -1,0 +1,130 @@
+<html>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        .label {
+            float: left;
+            width: 120px;
+        }
+
+        .infobox {
+            width: 200px;
+        }
+
+        .error {
+            color: red;
+            padding-left: 10px;
+        }
+
+        div {
+            padding: 5px;
+        }
+
+        .label {
+            float: left;
+            width: 120px;
+        }
+
+        .infobox {
+            width: 200px;
+        }
+
+        .error {
+            color: red;
+            padding-left: 10px;
+        }
+
+        .submit {
+            margin-left: 125px;
+            margin-top: 10px;
+        }
+
+        div {
+            padding: 5px;
+        }
+    </style>
+</head>
+
+<script>
+    $(document).ready(function () {             //Use ready to make a function available after the document is loaded
+        $('.error').hide();                     //Hide all 'error' elements
+        $('.infobox').each(function () {        //Alert the text of each 'infobox' element
+            $(this).blur(function () {          //Attach a function to the blur event. The blur event occurs when the  field loses focus
+                var data = $(this).val();       //Set the value of the <input> field
+                var len = data.length;          //The length property returns the length of a string (number of characters)
+                if (len < 1) {                  //Use if to specify a block of code to be executed, if a specified condition is true
+                    $(this).parent().find('.error').show();     //Return the direct parent element of ('error') as show
+                }
+                else {                          //Conditional statements are used to perform different actions based on different conditions
+                    $(this).parent().find('.error').hide();     //Return the direct parent element of ('error') as hide  
+                }       
+            });
+        });
+    });
+</script>
+
+<script>
+    $(document).ready(function () {             //Use ready to make a function available after the document is loaded
+        $('.error').hide();                     //Hide all 'error' elements
+        $('.submit').click(function (event) {   //The click method triggers the click event, or attaches a function to run when a click event occurs
+            $('.infobox').each(function () {    //Alert the text of each 'infobox' element
+                var data = $(this).val();       //Set the value of the <input> field
+                var len = data.length;          //The length property returns the length of a string (number of characters)
+                if (len < 1) {                  //Use if to specify a block of code to be executed, if a specified condition is true
+                    $(this).parent().find('.error').show();   //Return the direct parent element of ('error') as show    
+                }
+                else {                          //Conditional statements are used to perform different actions based on different conditions
+                    $(this).parent().find('.error').hide();    //Return the direct parent element of ('error') as hide
+                }
+            });
+            event.preventDefault();             //stops the default action of an element from happening 
+        });
+    }); 
+</script>
+
+<body>
+    <form>
+        <div>
+            <p>Create Your Account Here!!</p>
+        </div>
+        <div>
+            <span class="label">First Name </span>
+            <!--is an inline container used to mark up a part of a text, or a part of a document-->
+            <input type="text" class="infobox" name="userid" />
+            <!--describes the different types for the HTML <input> element-->
+            <span class="error"> This field cannot be blank</span>
+            <!--is an inline container used to mark up a part of a text, or a part of a document-->
+        </div>
+        <div>
+            <span class="label">Last Name </span>
+            <!--is an inline container used to mark up a part of a text, or a part of a document-->
+            <input type="text" class="infobox" name="userid" />
+            <!--describes the different types for the HTML <input> element-->
+            <span class="error"> This field cannot be blank</span>
+            <!--is an inline container used to mark up a part of a text, or a part of a document-->
+        </div>
+        <div>
+            <span class="label">Username </span>
+            <!--is an inline container used to mark up a part of a text, or a part of a document-->
+            <input type="text" class="infobox" name="userid" />
+            <!--describes the different types for the HTML <input> element-->
+            <span class="error"> This field cannot be blank</span>
+            <!--is an inline container used to mark up a part of a text, or a part of a document-->
+        </div>
+        <div>
+            <span class="label">Password </span>
+            <!--is an inline container used to mark up a part of a text, or a part of a document-->
+            <input type="password" class="infobox" name="password" />
+            <!--describes the different types for the HTML <input> element-->
+            <span class="error"> This field cannot be blank</span>
+            <!--is an inline container used to mark up a part of a text, or a part of a document-->
+        </div>
+        <input class="submit" type="submit" value="Submit">
+        <!--describes the different types for the HTML <input> element-->
+    </form>
+</body>
+
+
+</html>
